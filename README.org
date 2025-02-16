@@ -1,0 +1,27 @@
+* Description
+This package allows for opening web bookmarks by reading a =csv= file.
+It uses =completing-read= to choose from a list of candidates.
+* Screenshot
+[[file:screenshot.png]]
+* Installation
+- With [[https://github.com/slotThe/vc-use-package][vc-use-package]] (installed manually)
+#+begin_src emacs-lisp
+(use-package web-bookmarks
+  :vc (:fetcher github :repo "deadendpl/emacs-web-bookmarks"))
+#+end_src
+- With [[https://github.com/slotThe/vc-use-package][vc-use-package]] (built into Emacs 30+)
+#+begin_src emacs-lisp
+(use-package web-bookmarks
+  :vc (:url "https://github.com/deadendpl/emacs-web-bookmarks"))
+#+end_src
+- Without [[https://github.com/slotThe/vc-use-package][vc-use-package]]
+#+begin_src emacs-lisp
+(package-vc-install "https://github.com/deadendpl/emacs-web-bookmarks")
+#+end_src
+* Usage
+=M-x web-bookmarks-open=
+It will read bookmarks from the file specified in =web-bookmarks-file=.
+The file should look like this:
+#+begin_example
+Name of website,https://url-of-website.foo
+#+end_example
