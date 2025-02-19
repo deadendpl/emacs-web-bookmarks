@@ -4,7 +4,7 @@
 
 ;; Author:  Oliwier Czerwiński <oliwier.czerwi@proton.me>
 ;; Keywords: convenience
-;; Version: 20250216
+;; Version: 20250219
 ;; URL: https://github.com/deadendpl/emacs-web-bookmarks
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -40,7 +40,7 @@
   "Put bookmarks from `web-bookmarks-file' into `web-bookmarks-alist'."
   (with-temp-buffer
     (insert-file-contents web-bookmarks-file)
-    (while (search-forward "," nil t)
+    (while (search-forward "	" nil t)
       (let ((url (buffer-substring-no-properties
                   (point) (line-end-position)))
             (name (buffer-substring-no-properties
@@ -50,9 +50,9 @@
 (defun web-bookmarks-open ()
   "Open a bookmark."
   (interactive)
-  ;; bookmark causes vertico to error
   (web-bookmarks-read)
   (let ((choice (completing-read
+                 ;; bookmark causes vertico to error
                  "Website: " web-bookmarks-alist nil t)))
     (browse-url (cdr (assoc choice web-bookmarks-alist)))))
 
