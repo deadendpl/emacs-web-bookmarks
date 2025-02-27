@@ -1,4 +1,7 @@
 * Description
+It's better to use built-in =webjump=.
+I forgot about its existence, and that's why I wrote this.
+
 This package allows for opening web bookmarks by reading a =csv= file.
 It uses =completing-read= to choose from a list of candidates.
 * Screenshot

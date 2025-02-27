@@ -22,7 +22,7 @@
 
 ;;; Commentary:
 
-;; A package that reads web bookmarks from a csv file and allows for
+;; A package that reads web bookmarks from a tsv file and allows for
 ;; opening them from Emacs.
 
 ;;; Code:
